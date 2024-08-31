@@ -1,10 +1,29 @@
+import 'package:doctor_appointment/core/routing/app_router.dart';
+import 'package:doctor_appointment/core/theming/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'core/routing/routes.dart';
 
 class DocApp extends StatelessWidget {
-  const DocApp({super.key});
+  final AppRouter appRouter;
+  const DocApp({super.key, required this.appRouter});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    // ScreenUtilInit form flutter_screenutil package to made UI responsive.
+    return ScreenUtilInit(
+      // this the hight and width form you figma desain 
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        child: MaterialApp(
+          title: 'Doc App',
+          theme: ThemeData(
+            primaryColor: ColorsManager.mainBlue,
+            scaffoldBackgroundColor: Colors.white,
+          ),
+          debugShowCheckedModeBanner: false,
+          initialRoute: Routes.onBoardingScreen,
+          onGenerateRoute: appRouter.generateRoute,
+        ));
   }
 }
