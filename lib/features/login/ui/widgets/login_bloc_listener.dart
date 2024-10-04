@@ -29,7 +29,9 @@ class LoginBlocListener extends StatelessWidget {
             );
           },
           success: (loginResponse) {
+            //pop here means that the dialog is closed.
             context.pop();
+            //After login success navigate to home screen.
             context.pushNamed(Routes.homeScreen);
           },
           error: (error) {

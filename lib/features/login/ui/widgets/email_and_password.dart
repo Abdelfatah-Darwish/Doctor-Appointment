@@ -15,7 +15,7 @@ class EmailAndPassword extends StatefulWidget {
 }
 
 class _EmailAndPasswordState extends State<EmailAndPassword> {
-  bool isObscureText = true;
+  bool isObscureText = true; 
 
   bool hasLowercase = false;
   bool hasUppercase = false;
@@ -84,7 +84,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             },
           ),
           verticalSpace(24),
-          PasswordValidations(
+          PasswordValidations(  
             hasLowerCase: hasLowercase,
             hasUpperCase: hasUppercase,
             hasSpecialCharacters: hasSpecialCharacters,
